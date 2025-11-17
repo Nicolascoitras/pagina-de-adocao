@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>PAR — Suporte</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='34' height='34'><rect rx='6' width='34' height='34' fill='%2319B524'/><text x='50%' y='55%' font-size='18' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>PAR</text></svg>" alt="logo" class="logo">
+      <h1>PAR — Suporte</h1>
+    </div>
+    <nav>
+      <a class="nav-link" href="index.html">Início</a>
+      <a class="nav-link" href="adocao.html">Adoção</a>
+      <a class="nav-link" href="suporte.html">Suporte</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Central de Suporte</h2>
+
+    <section class="card">
+      <h3>Perguntas frequentes</h3>
+      <details><summary>Como funciona o processo de adoção?</summary>
+        <p>Você cadastra interesse, nossa equipe faz uma triagem e, se aprovado, agendamos visita e entrega responsável.</p>
+      </details>
+
+      <details><summary>Posso adotar se moro em apartamento?</summary>
+        <p>Sim — avaliamos caso a caso, considerando espaço, tempo disponível e perfil do animal.</p>
+      </details>
+
+      <details><summary>Há suporte pós-adoção?</summary>
+        <p>Sim. Oferecemos orientações por 30 dias e acompanhamento em caso de dúvidas.</p>
+      </details>
+    </section>
+
+    <section class="card" style="margin-top:12px;">
+      <h3>Fale com a equipe</h3>
+      <form id="suporteForm" onsubmit="return handleSupportSubmit(event)">
+        <label>Nome
+          <input id="supNome" required placeholder="Seu nome">
+        </label>
+        <label>E-mail
+          <input id="supEmail" type="email" required placeholder="seu@exemplo.com">
+        </label>
+        <label>Assunto
+          <input id="supAssunto" placeholder="Ex.: dúvidas sobre adoção">
+        </label>
+        <label>Mensagem
+          <textarea id="supMensagem" rows="4" placeholder="Explique como podemos ajudar"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Enviar</button>
+          <button class="btn" type="button" onclick="document.getElementById('suporteForm').reset()">Limpar</button>
+        </div>
+      </form>
+      <p id="supInfo" class="muted" style="margin-top:8px;"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year3"></span> PAR — Suporte</small>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year3').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>PAR — Página de Adoção</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='34' height='34'><rect rx='6' width='34' height='34' fill='%2319B524'/><text x='50%' y='55%' font-size='18' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>PAR</text></svg>" alt="logo" class="logo">
+      <h1>PAR — Adoção</h1>
+    </div>
+    <nav>
+      <a class="nav-link" href="index.html">Início</a>
+      <a class="nav-link" href="adocao.html">Adoção</a>
+      <a class="nav-link" href="suporte.html">Suporte</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Formulário de Cadastro de Interesse</h2>
+    <p>Preencha o formulário abaixo se você quer adotar ou saber mais sobre um animal.</p>
+
+    <form id="cadastro-form" class="card form-card" onsubmit="return handleSubmit(event)">
+      <div class="row">
+        <label>Nome completo
+          <input type="text" id="nome" required placeholder="Seu nome completo">
+        </label>
+
+        <label>E-mail
+          <input type="email" id="email" required placeholder="seu@exemplo.com">
+        </label>
+      </div>
+
+      <div class="row">
+        <label>Telefone
+          <input type="tel" id="telefone" placeholder="(00) 90000-0000">
+        </label>
+
+        <label>Endereço (cidade/bairro)
+          <input type="text" id="endereco" placeholder="Cidade / Bairro">
+        </label>
+      </div>
+
+      <div class="row">
+        <label>Animal de interesse
+          <select id="animalInteresse">
+            <option value="indiferente">Indiferente</option>
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+            <option value="outro">Outro</option>
+          </select>
+        </label>
+
+        <label>Tem animais em casa?
+          <select id="temAnimais">
+            <option value="nao">Não</option>
+            <option value="sim">Sim</option>
+          </select>
+        </label>
+      </div>
+
+      <label>Mensagem / Observações
+        <textarea id="mensagem" rows="3" placeholder="Deseja adicionar algo?"></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button class="btn primary" type="submit">Enviar cadastro</button>
+        <button class="btn" type="button" onclick="clearForm()">Limpar</button>
+      </div>
+    </form>
+
+    <section class="card" style="margin-top:18px;">
+      <h3>Cadastros recebidos</h3>
+      <p class="muted">Os registros ficam salvos localmente no navegador. Você pode exportá-los.</p>
+
+      <div id="registros-area"></div>
+
+      <div class="export-actions" style="margin-top:12px;">
+        <button class="btn" onclick="exportCSV()">Exportar CSV</button>
+        <button class="btn" onclick="exportXLS()">Exportar XLS (Excel)</button>
+        <button class="btn" onclick="clearAllRecords()">Limpar todos</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year2"></span> PAR — Adoção responsável</small>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+    // Inicializa visualização de registros
+    renderRecords();
+  </script>
+</body>
+</html>

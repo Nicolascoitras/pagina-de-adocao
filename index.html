@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PAR — Plataforma de Adoção Responsável</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='34' height='34'><rect rx='6' width='34' height='34' fill='%2319B524'/><text x='50%' y='55%' font-size='18' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>PAR</text></svg>" alt="logo" class="logo">
+      <h1>PAR — Adoção Responsável</h1>
+    </div>
+    <nav>
+      <a class="nav-link" href="index.html">Início</a>
+      <a class="nav-link" href="adocao.html">Adoção</a>
+      <a class="nav-link" href="suporte.html">Suporte</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Encontre um amigo, mude uma vida</h2>
+        <p>Conheça animais disponíveis para adoção e faça parte de um processo responsável e afetivo.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="adocao.html">Ver Página de Adoção</a>
+          <a class="btn" href="suporte.html">Entrar em Contato</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Como funciona</h3>
+        <ol>
+          <li>Veja perfis de animais.</li>
+          <li>Preencha o cadastro de interesse.</li>
+          <li>A equipe faz a triagem e agenda visita.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="features">
+      <article>
+        <h4>Triagem responsável</h4>
+        <p>Garantimos que cada adoção seja para um lar adequado e informado.</p>
+      </article>
+      <article>
+        <h4>Suporte pós-adoção</h4>
+        <p>Acompanhamento por 30 dias com dicas e orientações.</p>
+      </article>
+      <article>
+        <h4>Voluntariado</h4>
+        <p>Quer ajudar? Veja oportunidades de voluntariado na página de suporte.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> PAR — Plataforma de Adoção Responsável • Desenvolvido com ❤️</small>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Apenas forçar ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
